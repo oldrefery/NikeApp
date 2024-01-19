@@ -11,8 +11,11 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { products } from "../data/products";
+import { ProductDetailsScreenProps } from "../navigation/types";
 
-export const ProductDetailsScreen = () => {
+export const ProductDetailsScreen = ({
+  navigation,
+}: ProductDetailsScreenProps) => {
   const product = products[0];
   const { width } = useWindowDimensions();
 

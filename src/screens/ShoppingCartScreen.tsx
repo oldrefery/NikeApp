@@ -2,8 +2,9 @@ import { FlatList, Pressable, StyleSheet, Text } from "react-native";
 import { CartListItem } from "../components/CartListItem";
 import { cart } from "../data/cart";
 import { CartTotals } from "../components/CartTotals";
+import { ShoppingCartScreenProps } from "../navigation/types";
 
-export const ShoppingCartScreen = () => {
+export const ShoppingCartScreen = ({ navigation }: ShoppingCartScreenProps) => {
   return (
     <>
       <FlatList

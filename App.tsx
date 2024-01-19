@@ -1,11 +1,11 @@
-import { SafeAreaView, StyleSheet } from "react-native";
-import { ShoppingCartScreen } from "./src/screens/ShoppingCartScreen";
+import { StyleSheet, View } from "react-native";
+import { Navigation } from "./src/navigation/navigation";
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <ShoppingCartScreen />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <Navigation />
+    </View>
   );
 }
 
