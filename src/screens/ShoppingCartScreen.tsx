@@ -1,4 +1,4 @@
-import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { FlatList, Pressable, StyleSheet, Text } from "react-native";
 import { CartListItem } from "../components/CartListItem";
 import { cart } from "../data/cart";
 import { CartTotals } from "../components/CartTotals";
