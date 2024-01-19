@@ -1,12 +1,6 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { IProduct } from "../data/products";
-
-export interface ICartItem {
-  product: IProduct;
-  size: number;
-  quantity: number;
-}
+import { ICartItem } from "../data/cart";
 
 export interface CartListItemProps {
   cartItem: ICartItem;

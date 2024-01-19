@@ -1,4 +1,14 @@
-export default [
+export interface ICartItem {
+  product: {
+    id: string;
+    image: string;
+    name: string;
+    price: number;
+  };
+  size: number;
+  quantity: number;
+}
+export const cart: ICartItem[] = [
   {
     product: {
       id: "1",

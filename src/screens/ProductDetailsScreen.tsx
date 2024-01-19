@@ -1,4 +1,3 @@
-import products from "../data/products";
 import {
   FlatList,
   Image,
@@ -11,6 +10,7 @@ import {
   View,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { products } from "../data/products";
 
 export const ProductDetailsScreen = () => {
   const product = products[0];

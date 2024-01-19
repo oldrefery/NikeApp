@@ -7,7 +7,7 @@ export interface IProduct {
   sizes: number[];
   description: string;
 }
-export default [
+export const products: IProduct[] = [
   {
     id: "1",
     image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/nike/nike1.png",
