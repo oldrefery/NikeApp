@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { productsSlice } from "../features/productSlice";
 import { rootReducer } from "./rootReducer";
 import { useDispatch } from "react-redux";
 

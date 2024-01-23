@@ -1,10 +1,17 @@
 import { FlatList, Pressable, StyleSheet, Text } from "react-native";
 import { CartListItem } from "../components/CartListItem";
-import { cart } from "../data/cart";
 import { CartTotals } from "../components/CartTotals";
 import { ShoppingCartScreenProps } from "../navigation/types";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 export const ShoppingCartScreen = ({ navigation }: ShoppingCartScreenProps) => {
+  const cart = useSelector((state: RootState) => state.cart.items);
+
+  const handleCheckout = () => {
+    navigation.goBack();
+  };
+
   return (
     <>
       <FlatList
@@ -12,7 +19,7 @@ export const ShoppingCartScreen = ({ navigation }: ShoppingCartScreenProps) => {
         renderItem={({ item }) => <CartListItem cartItem={item} />}
         ListFooterComponent={CartTotals}
       />
-      <Pressable style={styles.button}>
+      <Pressable onPress={handleCheckout} style={styles.button}>
         <Text style={styles.buttonText}>Checkout</Text>
       </Pressable>
     </>

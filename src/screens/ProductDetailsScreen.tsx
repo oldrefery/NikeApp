@@ -10,22 +10,26 @@ import {
   View,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { products } from "../data/products";
 import { ProductDetailsScreenProps } from "../navigation/types";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
+import { addItem } from "../features/cartSlice";
 
 export const ProductDetailsScreen = ({
   navigation,
 }: ProductDetailsScreenProps) => {
-  const selectedProduct = useSelector(
+  const product = useSelector(
     (state: RootState) => state.products.selectedProduct
   );
+  const dispatch = useDispatch();
   const { width } = useWindowDimensions();
 
-  const handleAddToCart = () => {};
+  const handleAddToCart = () => {
+    dispatch(addItem({ product }));
+    navigation.goBack();
+  };
 
-  if (!selectedProduct) {
+  if (!product) {
     return <View />;
   }
 
@@ -33,7 +37,7 @@ export const ProductDetailsScreen = ({
     <SafeAreaView>
       <ScrollView>
         <FlatList
-          data={selectedProduct.images}
+          data={product.images}
           renderItem={({ item }) => (
             <Image source={{ uri: item }} style={{ width, aspectRatio: 1 }} />
           )}
@@ -42,9 +46,9 @@ export const ProductDetailsScreen = ({
           pagingEnabled
         />
         <View style={styles.textContainer}>
-          <Text style={styles.title}>{selectedProduct.name}</Text>
-          <Text style={styles.price}>${selectedProduct.price}</Text>
-          <Text style={styles.description}>{selectedProduct.description}</Text>
+          <Text style={styles.title}>{product.name}</Text>
+          <Text style={styles.price}>${product.price}</Text>
+          <Text style={styles.description}>{product.description}</Text>
         </View>
       </ScrollView>
       <Pressable onPress={handleAddToCart} style={styles.button}>
