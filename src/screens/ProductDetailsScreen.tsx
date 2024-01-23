@@ -12,20 +12,28 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { products } from "../data/products";
 import { ProductDetailsScreenProps } from "../navigation/types";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 export const ProductDetailsScreen = ({
   navigation,
 }: ProductDetailsScreenProps) => {
-  const product = products[0];
+  const selectedProduct = useSelector(
+    (state: RootState) => state.products.selectedProduct
+  );
   const { width } = useWindowDimensions();
 
   const handleAddToCart = () => {};
+
+  if (!selectedProduct) {
+    return <View />;
+  }
 
   return (
     <SafeAreaView>
       <ScrollView>
         <FlatList
-          data={product.images}
+          data={selectedProduct.images}
           renderItem={({ item }) => (
             <Image source={{ uri: item }} style={{ width, aspectRatio: 1 }} />
           )}
@@ -34,9 +42,9 @@ export const ProductDetailsScreen = ({
           pagingEnabled
         />
         <View style={styles.textContainer}>
-          <Text style={styles.title}>{product.name}</Text>
-          <Text style={styles.price}>${product.price}</Text>
-          <Text style={styles.description}>{product.description}</Text>
+          <Text style={styles.title}>{selectedProduct.name}</Text>
+          <Text style={styles.price}>${selectedProduct.price}</Text>
+          <Text style={styles.description}>{selectedProduct.description}</Text>
         </View>
       </ScrollView>
       <Pressable onPress={handleAddToCart} style={styles.button}>
