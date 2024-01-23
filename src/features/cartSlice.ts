@@ -32,7 +32,20 @@ export const cartSlice = createSlice({
         });
       }
     },
-    changeQuantity: () => {},
+    changeQuantity: (state, action) => {
+      const { productId, quantity } = action.payload;
+      const cartItem = state.items.find((i) => i.product.id === productId);
+
+      if (cartItem) {
+        if (cartItem) {
+          cartItem.quantity += quantity;
+        }
+
+        if (cartItem.quantity <= 0) {
+          state.items = state.items.filter((item) => item !== cartItem);
+        }
+      }
+    },
   },
 });
 
