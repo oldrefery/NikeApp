@@ -6,6 +6,8 @@ import { ShoppingCartScreen } from "../screens/ShoppingCartScreen";
 import { Pressable, StyleSheet, Text } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { RootStackParamList } from "./types";
+import { useSelector } from "react-redux";
+import { selectNumberOfItems } from "../features/cartSlice";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -22,6 +24,7 @@ const styles = StyleSheet.create({
   },
 });
 export const Navigation = () => {
+  const numberOfItems = useSelector(selectNumberOfItems);
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -39,7 +42,7 @@ export const Navigation = () => {
                 style={styles.cartContainer}
               >
                 <FontAwesome name="shopping-cart" size={18} color="gray" />
-                <Text style={styles.cartText}>1</Text>
+                <Text style={styles.cartText}>{numberOfItems}</Text>
               </Pressable>
             ),
           })}

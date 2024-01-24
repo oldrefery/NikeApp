@@ -1,21 +1,33 @@
 import { StyleSheet, Text, View } from "react-native";
+import { useSelector } from "react-redux";
+import {
+  selectDelivery,
+  selectSubtotal,
+  selectTotal,
+} from "../features/cartSlice";
 
-export const CartTotals = () => (
-  <View style={styles.totalsContainer}>
-    <View style={styles.row}>
-      <Text style={styles.text}>Subtotal</Text>
-      <Text style={styles.text}>410,00 US$</Text>
+export const CartTotals = () => {
+  const subTotal = useSelector(selectSubtotal);
+  const delivery = useSelector(selectDelivery);
+  const total = useSelector(selectTotal);
+
+  return (
+    <View style={styles.totalsContainer}>
+      <View style={styles.row}>
+        <Text style={styles.text}>Subtotal</Text>
+        <Text style={styles.text}>{subTotal} US$</Text>
+      </View>
+      <View style={styles.row}>
+        <Text style={styles.text}>Delivery</Text>
+        <Text style={styles.text}>{delivery} US$</Text>
+      </View>
+      <View style={styles.row}>
+        <Text style={styles.textBold}>Total</Text>
+        <Text style={styles.textBold}>{total} US$</Text>
+      </View>
     </View>
-    <View style={styles.row}>
-      <Text style={styles.text}>Delivery</Text>
-      <Text style={styles.text}>10,00 US$</Text>
-    </View>
-    <View style={styles.row}>
-      <Text style={styles.textBold}>Total</Text>
-      <Text style={styles.textBold}>420,00 US$</Text>
-    </View>
-  </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   totalsContainer: {
