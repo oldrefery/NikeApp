@@ -1,6 +1,6 @@
 # NikeApp - React Native Project
 
-This is a simple React Native project developed with Expo. It showcases a Nike app interface with interactive elements and smooth animations.
+This is a simple React Native project developed with Expo and RTK (Redux Toolkit). It showcases a Nike app interface with interactive elements and smooth animations.
 
 ## Video Demonstration
 
