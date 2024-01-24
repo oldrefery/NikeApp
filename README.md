@@ -4,7 +4,7 @@ This is a simple React Native project developed with Expo. It showcases a Nike a
 
 ## Video Demonstration
 
-![Video](![ezgif-1-9f7175f20f](https://github.com/oldrefery/NikeApp/assets/35261486/45aad493-9671-4c77-a450-88015a716016)
+<img src="https://github.com/oldrefery/NikeApp/assets/35261486/802b2fb9-4a4f-48ef-8b2c-0f5e2f36f94e" width="25%" height="25%">
 
 
 ## Getting Started
