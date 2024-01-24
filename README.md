@@ -2,17 +2,10 @@
 
 This is a simple React Native project developed with Expo. It showcases a Nike app interface with interactive elements and smooth animations.
 
-## Preview
-
-![Preview](https://github.com/oldrefery/NikeApp/assets/35261486/0a7d51d8-30e3-43e2-a18e-73f72244fded)
-
-Click on the image above to watch the video demonstration.
-
 ## Video Demonstration
 
-To see the video demonstration of the app, click on the following link:
+![Video](![ezgif-1-9f7175f20f](https://github.com/oldrefery/NikeApp/assets/35261486/45aad493-9671-4c77-a450-88015a716016)
 
-[![Video](https://github.com/oldrefery/NikeApp/assets/35261486/0a7d51d8-30e3-43e2-a18e-73f72244fded)](https://github.com/oldrefery/NikeApp/assets/35261486/f39b3f2a-4cc2-4fb6-84e5-1c1272bea62d)
 
 ## Getting Started
 
